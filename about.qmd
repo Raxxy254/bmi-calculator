@@ -14,12 +14,12 @@ BMI can be computed by dividing the person's weight (kg) by their squared height
 
 where ***kg*** represents the person's weight and ***m^2^*** the person's squared height.
 
-| ***BMI Range*** | ***Weight Status***      |
-|-----------------|--------------------------|
-| \< 18.5         | Underweight              |
-| 18.5 – 24.9     | Healthy / Optimum Weight |
-| 25.0 – 29.9     | Overweight               |
-| \>= 30.0        | Obese                    |
+| ***BMI Range***  | ***Weight Status***      |
+|------------------|--------------------------|
+| Below 18.5 .     | Underweight              |
+| 18.5 – 24.9 .    | Healthy / Optimum Weight |
+| 25.0 – 29.9 .    | Overweight               |
+| 30.0 and above . | Obese                    |
 
 : Standard BMI Categories
 
