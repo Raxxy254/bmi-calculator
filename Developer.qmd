@@ -1,0 +1,21 @@
+---
+title: "About the Developer"
+format: html
+editor: visual
+---
+
+***Joseph Mwaura Mburu***\
+*4th Year Student, B.Sc. in Mathematics (Statistics) at Pwani University*
+
+Hello! I am a final-year Statistics student at Pwani University. This BMI Calculator application represents a blend of my academic background in statistical computing and my practical skills in full-stack data application development, containerization (Docker), and cloud deployment.
+
+My primary interests lie in data science, predictive modeling, and using statistical computing to build accessible web tools that solve real-world problems.
+
+💻 **GitHub:** [\@Josephmwaura](https://github.com/Raxxy254)\
+💼 **LinkedIn:** [\@Josephmwaura](www.linkedin.com/in/joseph-mwaura-mburu-a30b252a0)
+
+------------------------------------------------------------------------
+
+### Profile
+
+![](images/1783080549514.jfif){fig-align="left" width="186" height="211"}
