@@ -13,45 +13,38 @@ library(shinythemes)
 ####################################
 # User Interface                   #
 ####################################
-ui <- fluidPage(theme = shinytheme("superhero"),
-                navbarPage("BMI Calculator:",
-                           
-                           tabPanel("Home",
-                                    # Input values
-                                    sidebarPanel(
-                                      HTML("<h3>Input parameters</h3>"),
-                                      sliderInput("height", 
-                                                  label = "Height", 
-                                                  value = 175, 
-                                                  min = 40, 
-                                                  max = 250),
-                                      sliderInput("weight", 
-                                                  label = "Weight", 
-                                                  value = 70, 
-                                                  min = 20, 
-                                                  max = 100),
-                                      
-                                      actionButton("submitbutton", 
-                                                   "Submit", 
-                                                   class = "btn btn-primary")
-                                    ),
-                                    
-                                    mainPanel(
-                                      tags$label(h3('Status/Output')), # Status/Output Text Box
-                                      verbatimTextOutput('contents'),
-                                      tableOutput('tabledata') # Results table
-                                    ) # mainPanel()
-                                    
-                           ), #tabPanel(), Home
-                           
-                           tabPanel("About", 
-                                    titlePanel("About"), 
-                                    div(includeMarkdown("about.qmd"), 
-                                        align="justify")
-                           ) #tabPanel(), About
-                           
-                ) # navbarPage()
-) # fluidPage()
+ui <- fluidPage(
+  theme = shinytheme("superhero"),
+  
+  navbarPage(
+    title = "BMI CALCULATOR",
+    collapsible = FALSE,inverse = F,position = "static-top",  # Ensures Render doesn't break the layout
+    
+    # This creates a "Three Dots" menu container on the navigation bar
+    navbarMenu("\u2630", 
+               
+               tabPanel("Home",
+                        sidebarPanel(
+                          HTML("<h3>Input parameters</h3>"),
+                          sliderInput("height", label = "Height (cm)", value = 175, min = 40, max = 250),
+                          sliderInput("weight", label = "Weight (kg)", value = 70, min = 20, max = 100),
+                          actionButton("submitbutton", "Submit", class = "btn btn-primary")
+                        ),
+                        mainPanel(
+                          tags$label(h3('Results')),
+                          verbatimTextOutput('contents'),
+                          tableOutput('tabledata')
+                        )
+               ),
+               
+               tabPanel("About", 
+                        titlePanel("About"),
+                        div(includeMarkdown("about.qmd"), align="justify")
+               )
+               
+    ) # End of navbarMenu
+  ) # End of navbarPage
+)
 
 
 ####################################
@@ -64,8 +57,20 @@ server <- function(input, output, session) {
     
     bmi <- input$weight/( (input$height/100) * (input$height/100) )
     bmi <- data.frame(bmi)
+    category <- ""
+    if(bmi >= 30){
+      category = "Obese"
+    }else if(bmi >= 25){
+      category = "Overweight"
+    }else if(bmi >= 18.5){
+      category = "Healthy"
+    }else{
+      category = "Underweight"
+    }
+    
     names(bmi) <- "BMI"
-    print(bmi)
+    bmi$"CATEGORY" <- category
+    return(bmi)
     
   })
   
