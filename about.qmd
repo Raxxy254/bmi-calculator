@@ -16,10 +16,10 @@ where ***kg*** represents the person's weight and ***m^2^*** the person's square
 
 | ***BMI Range*** | ***Weight Status***      |
 |-----------------|--------------------------|
-| Below 18.5      | Underweight              |
+| \< 18.5         | Underweight              |
 | 18.5 – 24.9     | Healthy / Optimum Weight |
 | 25.0 – 29.9     | Overweight               |
-| 30.0 and above  | Obese                    |
+| \>= 30.0        | Obese                    |
 
 : Standard BMI Categories
 
