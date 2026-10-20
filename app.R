@@ -37,9 +37,13 @@ ui <- fluidPage(
                         )
                ),
                
-               tabPanel("About", 
-                        titlePanel("About"),
+               tabPanel("About BMI", 
+                        titlePanel("What is BMI ?"),
                         div(includeMarkdown("about.qmd"), align="justify")
+               ),
+               tabPanel("Developer", 
+                        titlePanel("About the Developer"),
+                        div(includeMarkdown("Developer.qmd"), align="justify")
                )
                
     ) # End of navbarMenu
