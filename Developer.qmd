@@ -12,7 +12,7 @@ Hello! I am a final-year Statistics student at Pwani University. This BMI Calcul
 My primary interests lie in data science, predictive modeling, and using statistical computing to build accessible web tools that solve real-world problems.
 
 💻 **GitHub:** [\@Josephmwaura](https://github.com/Raxxy254)\
-💼 **LinkedIn:** [\@Josephmwaura](www.linkedin.com/in/joseph-mwaura-mburu-a30b252a0)
+💼 **LinkedIn:** [\@Josephmwaura](http://www.linkedin.com/in/joseph-mwaura-mburu-a30b252a0)
 
 ------------------------------------------------------------------------
 
