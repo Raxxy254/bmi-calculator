@@ -18,7 +18,7 @@ ui <- fluidPage(
   
   navbarPage(
     title = "BMI CALCULATOR",
-    collapsible = FALSE,inverse = F,position = "static-top",  # Ensures Render doesn't break the layout
+    collapsible = FALSE,inverse = T,position = "static-top",  # Ensures Render doesn't break the layout
     
     # This creates a "Three Dots" menu container on the navigation bar
     navbarMenu("\u2630", 
@@ -28,6 +28,7 @@ ui <- fluidPage(
                           HTML("<h3>Input parameters</h3>"),
                           sliderInput("height", label = "Height (cm)", value = 175, min = 40, max = 250),
                           sliderInput("weight", label = "Weight (kg)", value = 70, min = 20, max = 100),
+                          sliderInput("length", label = "length", value = 40, min = 20, max = 100),
                           actionButton("submitbutton", "Submit", class = "btn btn-primary")
                         ),
                         mainPanel(
@@ -61,6 +62,7 @@ server <- function(input, output, session) {
     
     bmi <- input$weight/( (input$height/100) * (input$height/100) )
     bmi <- data.frame(bmi)
+    len <- input$length
     category <- ""
     if(bmi >= 30){
       category = "Obese"
@@ -74,6 +76,7 @@ server <- function(input, output, session) {
     
     names(bmi) <- "BMI"
     bmi$"CATEGORY" <- category
+    bmi$"LENGTH" <- len
     return(bmi)
     
   })
@@ -83,7 +86,7 @@ server <- function(input, output, session) {
     if (input$submitbutton>0) { 
       isolate("Calculation complete.") 
     } else {
-      return("Server is ready for calculation.")
+      return("Server is ready.")
     }
   })
   
